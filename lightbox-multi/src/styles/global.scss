@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    :focus {
+        outline: 0;
+    }
+}
+
+body {
+    background-color: #3B78F1;
+    -webkit-font-smoothing: antialiased;
+    color: white;
+}
+
+body, input, textarea, button {
+    font: 400 1rem Roboto, sans-serif;
+}
+
+input:focus {
+    box-shadow: 0 0 0 2px #583BC5;
+}
