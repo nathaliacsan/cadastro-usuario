@@ -78,6 +78,11 @@
                 }
                 
             }
+
+            .error-message {
+                color: red;
+                font-size: 0.75rem;
+            }
          
             input {
                 border-radius: 2px;
@@ -88,6 +93,8 @@
                 &::placeholder {
                     color: #444444;
                 }
+
+            
 
             }
 
