@@ -54,7 +54,30 @@
 
             width: 100%;
 
+            .submit-button {
+                align-self: end;
+                height: 30px;
+                border: 0;
+                background: #65C97A;
+                color: white;
+                padding: 0 1.25rem;
+                border-radius: 2px;  
+                width: 168px;    
+                margin-top: 1.25rem;
+    
+                cursor: pointer;
+    
+                &:not(:disabled):hover {
+                    background: #82D293;
+                    transition: background-color 0.2s;
+                }
 
+                &:disabled {
+                    opacity: 0.7;
+                    cursor: not-allowed;
+                }
+                
+            }
          
             input {
                 border-radius: 2px;
@@ -66,31 +89,11 @@
                     color: #444444;
                 }
 
-                
-
             }
 
         }
 
-        button {
-            align-self: end;
-            height: 30px;
-            border: 0;
-            background: #65C97A;
-            color: white;
-            padding: 0 1.25rem;
-            border-radius: 2px;  
-            width: 168px;    
-            margin-top: 1.25rem;
-
-            cursor: pointer;
-
-            &:hover {
-                background: #82D293;
-                transition: background-color 0.2s;
-            }
-           
-        } 
+        
     }
         
     
