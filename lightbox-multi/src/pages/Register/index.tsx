@@ -37,6 +37,7 @@ export function Register() {
   }
 
   return (
+    // Dialog é uma lib de acessibilidade
     <Dialog.Root defaultOpen={true}>
       <Dialog.Trigger />
       <Dialog.Portal>
