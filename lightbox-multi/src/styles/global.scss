@@ -21,3 +21,11 @@ body, input, textarea, button {
 input:focus {
     box-shadow: 0 0 0 2px #583BC5;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}

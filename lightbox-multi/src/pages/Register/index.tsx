@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { ChangeEvent, FormEvent, isValidElement, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 import './styles.scss'
 
@@ -9,6 +9,7 @@ export function Register() {
   const [name, setName] = useState<string>('')
   const [email, setEmail] = useState<string>('')
   const [showErrorMessage, setShowErrorMessage] = useState<boolean>(false)
+  const [sendCupom, setSendCupom] = useState<boolean>(false)
 
   function handleNameChange(event: ChangeEvent<HTMLInputElement>) {
     const { value } = event.target
@@ -29,9 +30,8 @@ export function Register() {
     const validName = validateName.test(name)
 
     if (validEmail && validName) {
-      console.log('cupom')
+      setSendCupom(true)
     } else {
-      console.log(email)
       setShowErrorMessage(true)
     }
   }
@@ -41,16 +41,32 @@ export function Register() {
       <Dialog.Trigger />
       <Dialog.Portal>
         <Dialog.Overlay className="dialog-overlay" />
-        <Dialog.Content className="dialog-content">
+        <Dialog.Content
+          className={`dialog-content ${
+            sendCupom ? 'dialog-content--cupom' : 'dialog-content--cadastro'
+          }`}
+        >
           <Dialog.Close asChild>
-            <button className="close-button">Fechar</button>
+            <a
+              href="https://www.multilaser.com.br/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <button
+                className={`close-button ${sendCupom ? 'visible' : 'hidden'}`}
+              >
+                Fechar
+              </button>
+            </a>
           </Dialog.Close>
           <div className="box-form">
-            <Dialog.Description>
+            <Dialog.Description className={sendCupom ? 'hidden' : 'visible'}>
               Cadastre-se e receba agora mesmo!
             </Dialog.Description>
 
-            <form className="form-register">
+            <form
+              className={`form-register ${sendCupom ? 'hidden' : 'visible'}`}
+            >
               <input
                 type="text"
                 placeholder="Nome completo:"
