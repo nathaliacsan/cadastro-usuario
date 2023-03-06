@@ -27,9 +27,10 @@ export function Register() {
   function verifyForm(event: FormEvent) {
     event.preventDefault()
 
-    const validEmail = validateEmail.test(email)
     const validName = validateName.test(name)
-
+    const validEmail = validateEmail.test(email)
+    console.log(validEmail, 'email')
+    console.log(validName, 'name')
     if (validEmail && validName) {
       setSendCupom(true)
     } else {
@@ -76,7 +77,7 @@ export function Register() {
             >
               <input
                 type="text"
-                placeholder="Nome completo:"
+                placeholder="Nome:"
                 value={name}
                 onChange={handleNameChange}
               />
