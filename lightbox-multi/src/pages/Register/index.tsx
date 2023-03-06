@@ -93,7 +93,7 @@ export function Register() {
               <button
                 className="submit-button"
                 type="submit"
-                disabled={name.length === 0 || email.length === 0}
+                disabled={name.trim().length <= 2 || email.length === 0}
                 onClick={verifyForm}
               >
                 CADASTRE-SE
