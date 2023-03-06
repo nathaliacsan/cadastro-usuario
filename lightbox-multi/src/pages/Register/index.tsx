@@ -1,5 +1,6 @@
 import * as Dialog from '@radix-ui/react-dialog'
 import { ChangeEvent, FormEvent, useState } from 'react'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 import './styles.scss'
 
@@ -37,7 +38,7 @@ export function Register() {
   }
 
   return (
-    // Dialog é uma lib de acessibilidade
+    // Dialog faz parte do radix-ui, lib de acessibilidade
     <Dialog.Root defaultOpen={true}>
       <Dialog.Trigger />
       <Dialog.Portal>
@@ -48,17 +49,22 @@ export function Register() {
           }`}
         >
           <Dialog.Close asChild>
-            <a
-              href="https://www.multilaser.com.br/"
-              target="_blank"
-              rel="noreferrer"
+            {/* Redirecionar para utilizar o cupom */}
+            <Router>
+              <Link to="https://www.multilaser.com.br/">
+                <button
+                  className={`close-button ${sendCupom ? 'visible' : 'hidden'}`}
+                >
+                  Fechar
+                </button>
+              </Link>
+            </Router>
+            {/* Para fechar sem redirecionar para utilizar o cupom */}
+            {/* <button
+              className={`close-button ${sendCupom ? 'visible' : 'hidden'}`}
             >
-              <button
-                className={`close-button ${sendCupom ? 'visible' : 'hidden'}`}
-              >
-                Fechar
-              </button>
-            </a>
+              Fechar
+            </button> */}
           </Dialog.Close>
           <div className="box-form">
             <Dialog.Description className={sendCupom ? 'hidden' : 'visible'}>
