@@ -59,7 +59,7 @@ export function Register() {
                 </button>
               </Link>
             </Router>
-            {/* Para fechar sem redirecionar para utilizar o cupom */}
+            {/* Para fechar o modal sem redirecionar ao site da multi */}
             {/* <button
               className={`close-button ${sendCupom ? 'visible' : 'hidden'}`}
             >
