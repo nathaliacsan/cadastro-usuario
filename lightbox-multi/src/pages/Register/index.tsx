@@ -29,8 +29,7 @@ export function Register() {
 
     const validName = validateName.test(name)
     const validEmail = validateEmail.test(email)
-    console.log(validEmail, 'email')
-    console.log(validName, 'name')
+
     if (validEmail && validName) {
       setSendCupom(true)
     } else {
